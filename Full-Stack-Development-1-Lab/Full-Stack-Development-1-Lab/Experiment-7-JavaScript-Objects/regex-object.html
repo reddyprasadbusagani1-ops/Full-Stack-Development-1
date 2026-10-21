@@ -1,0 +1,2 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>RegExp Object</title></head><body><h1>Regular Expression</h1><label>Enter a 10-digit mobile number: <input id="mobile" type="text"></label><button id="check">Validate</button><p id="result"></p>
+<script>document.getElementById("check").onclick = () => { const pattern = /^[0-9]{10}$/; const value = document.getElementById("mobile").value; document.getElementById("result").textContent = pattern.test(value) ? "Valid 10-digit number" : "Invalid: enter exactly 10 digits"; };</script></body></html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Registration Validation</title>
+<style>body{font-family:Arial;max-width:560px;margin:30px auto;padding:16px}label{display:block;margin-top:12px}input{display:block;width:100%;padding:8px;box-sizing:border-box}button{margin-top:16px;padding:9px 14px}.error{color:#b00020}.success{color:#176b2c}</style></head><body>
+<h1>Registration Form Validation</h1><form id="form" novalidate>
+<label for="name">Name</label><input id="name" autocomplete="name">
+<label for="mobile">Mobile</label><input id="mobile" inputmode="numeric" autocomplete="tel">
+<label for="email">Email</label><input id="email" inputmode="email" autocomplete="email">
+<button type="submit">Validate</button><button type="reset">Reset</button></form><p id="result" aria-live="polite"></p>
+<script>
+document.getElementById("form").addEventListener("submit",event=>{
+ event.preventDefault();
+ const name=document.getElementById("name").value.trim();
+ const mobile=document.getElementById("mobile").value.trim();
+ const email=document.getElementById("email").value.trim();
+ const errors=[];
+ if(!/^[A-Za-z][A-Za-z0-9]{5,}$/.test(name))errors.push("Name must start with a letter and contain at least 6 alphanumeric characters.");
+ if(!/^[0-9]{10}$/.test(mobile))errors.push("Mobile must contain exactly 10 digits.");
+ if(!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(email))errors.push("Enter a valid email such as student@example.com.");
+ const result=document.getElementById("result");
+ result.className=errors.length?"error":"success";
+ result.textContent=errors.length?errors.join(" "):"All fields are valid.";
+});
+document.getElementById("form").addEventListener("reset",()=>{const result=document.getElementById("result");result.textContent="";result.className="";});
+</script></body></html>

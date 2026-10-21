@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Registration Form</title>
+<style>body{font-family:Arial;margin:20px}table{border-collapse:collapse}td{padding:8px}input,select,textarea{padding:6px;max-width:100%}</style></head><body>
+<h1>Student Registration Form</h1>
+<form onsubmit="event.preventDefault(); alert('Form demonstration complete. No data was sent to a server.');">
+<table>
+<tr><td><label for="name">Full name</label></td><td><input id="name" name="name" type="text" required></td></tr>
+<tr><td><label for="password">Password</label></td><td><input id="password" name="password" type="password" required></td></tr>
+<tr><td><label for="age">Age</label></td><td><input id="age" name="age" type="number" min="1" max="120"></td></tr>
+<tr><td><label for="dob">Date of birth</label></td><td><input id="dob" name="dob" type="date"></td></tr>
+<tr><td>Gender</td><td><label><input type="radio" name="gender" value="female"> Female</label> <label><input type="radio" name="gender" value="male"> Male</label> <label><input type="radio" name="gender" value="other"> Other</label></td></tr>
+<tr><td>Interests</td><td><label><input type="checkbox" name="interest" value="coding"> Coding</label> <label><input type="checkbox" name="interest" value="design"> Design</label></td></tr>
+<tr><td><label for="course">Course</label></td><td><select id="course" name="course"><option value="">Choose a course</option><option>B.Tech AI &amp; DS</option><option>B.Tech CSE</option><option>B.Tech ECE</option></select></td></tr>
+<tr><td><label for="address">Address</label></td><td><textarea id="address" name="address" rows="3"></textarea></td></tr>
+<tr><td colspan="2"><button type="submit">Submit</button> <button type="reset">Reset</button></td></tr>
+</table></form></body></html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>JavaScript Input</title></head><body>
+<h1>Ways to Take Input</h1><label>Enter your name: <input id="name" type="text"></label><button id="show">Show input</button><p id="result"></p>
+<script>
+document.getElementById("show").addEventListener("click", () => {
+  const fromField = document.getElementById("name").value;
+  const fromPrompt = prompt("Enter a number:");
+  const number = Number(fromPrompt);
+  document.getElementById("result").textContent =
+    "Input field: " + fromField + " | Prompt converted to number: " +
+    (Number.isFinite(number) ? number : "Invalid number");
+});
+</script></body></html>

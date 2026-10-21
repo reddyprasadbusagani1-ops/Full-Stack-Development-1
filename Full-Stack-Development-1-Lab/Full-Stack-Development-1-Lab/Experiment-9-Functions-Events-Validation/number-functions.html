@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Number Functions</title>
+<style>body{font-family:Arial;max-width:700px;margin:30px auto;padding:10px}button{margin:5px;padding:8px 12px}pre{white-space:pre-wrap;background:#f2f2f2;padding:12px}</style></head><body>
+<h1>JavaScript Functions and Events</h1>
+<label for="number">Enter a non-negative integer (up to 1000): </label><input id="number" type="number" min="0" max="1000" step="1">
+<div><button data-action="factorial">Factorial</button><button data-action="fibonacci">Fibonacci</button><button data-action="prime">Prime Numbers</button><button data-action="palindrome">Palindrome</button></div>
+<pre id="result">Select a button to display the result.</pre>
+<script>
+function getNumber(){const raw=document.getElementById("number").value;const n=Number(raw);if(raw.trim()===""||!Number.isInteger(n)||n<0||n>1000){document.getElementById("result").textContent="Enter an integer from 0 to 1000.";return null;}return n;}
+function factorial(n){if(n>170){return "Factorial is too large to display accurately as a JavaScript Number.";}let result=1;for(let i=2;i<=n;i++)result*=i;return n+"! = "+result;}
+function fibonacci(n){let a=0,b=1,series=[];while(a<=n){series.push(a);[a,b]=[b,a+b];}return "Fibonacci series up to "+n+": "+series.join(", ");}
+function primesUpTo(n){const primes=[];for(let x=2;x<=n;x++){let prime=true;for(let d=2;d<=Math.sqrt(x);d++){if(x%d===0){prime=false;break;}}if(prime)primes.push(x);}return "Prime numbers up to "+n+": "+(primes.join(", ")||"None");}
+function palindrome(n){const s=String(n);return s===s.split("").reverse().join("")?n+" is a palindrome.":n+" is not a palindrome.";}
+document.querySelectorAll("button[data-action]").forEach(button=>button.addEventListener("click",()=>{const n=getNumber();if(n===null)return;const action=button.dataset.action;let output;if(action==="factorial")output=factorial(n);else if(action==="fibonacci")output=fibonacci(n);else if(action==="prime")output=primesUpTo(n);else output=palindrome(n);document.getElementById("result").textContent=output;}));
+</script></body></html>

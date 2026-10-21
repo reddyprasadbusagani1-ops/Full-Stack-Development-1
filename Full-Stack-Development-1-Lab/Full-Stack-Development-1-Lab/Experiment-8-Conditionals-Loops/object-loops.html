@@ -1,0 +1,2 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Object Loops</title></head><body><h1>for-in, forEach and for-of</h1><pre id="result"></pre>
+<script>const student={name:"Anu",course:"AI & DS",year:2};let out="for-in (object properties):\n";for(const key in student)out+=key+": "+student[key]+"\n";const marks=[80,90,85];out+="\nforEach (array values):\n";marks.forEach((mark,index)=>out+=index+": "+mark+"\n");out+="\nfor-of (array values):\n";for(const mark of marks)out+=mark+"\n";document.getElementById("result").textContent=out;</script></body></html>

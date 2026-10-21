@@ -1,0 +1,4 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Document Object</title></head><body>
+<h1 id="heading">Document Object Demo</h1><p class="item">First paragraph</p><p class="item">Second paragraph</p><button id="change">Use document methods</button><p id="result"></p>
+<script>document.getElementById("change").onclick = () => { const items = document.getElementsByClassName("item"); items[0].textContent = "Changed using getElementsByClassName"; document.getElementById("heading").style.color = "blue"; document.getElementById("result").textContent = "Title: " + document.title + " | Paragraph count: " + items.length; };</script>
+</body></html>

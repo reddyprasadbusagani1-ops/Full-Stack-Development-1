@@ -1,0 +1,4 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Window Object</title></head><body>
+<h1>Window Object Demo</h1><button id="show">Show window information</button><p id="result"></p>
+<script>document.getElementById("show").onclick = () => { document.getElementById("result").textContent = "Inner size: " + window.innerWidth + " × " + window.innerHeight + "; URL: " + window.location.href; window.setTimeout(() => console.log("setTimeout example"), 500); };</script>
+</body></html>

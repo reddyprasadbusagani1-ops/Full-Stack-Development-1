@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>User-defined Object</title></head><body><h1>User-defined Object</h1><pre id="result"></pre>
+<script>
+class Student {
+  constructor(name, marks) { this._name = name; this._marks = marks; }
+  get name() { return this._name; }
+  set name(value) { this._name = value; }
+  get marks() { return this._marks; }
+  set marks(value) { if (value >= 0 && value <= 100) this._marks = value; }
+  describe() { return this.name + " scored " + this.marks + " marks."; }
+}
+const student = new Student("Ravi", 87);
+student.name = "Ravi Kumar";
+document.getElementById("result").textContent = "Name (accessor): " + student.name + "\nMarks (accessor): " + student.marks + "\nMethod: " + student.describe();
+</script></body></html>

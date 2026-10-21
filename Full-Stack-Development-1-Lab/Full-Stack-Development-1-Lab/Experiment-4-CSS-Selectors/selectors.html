@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>CSS Selectors</title>
+<style>
+/* Simple selectors: element, id, class, group, universal */
+*{box-sizing:border-box} body{font-family:Arial;margin:24px} h1{color:#17365d} #special{background:#fff2cc} .highlight{color:#a61c00} h2,p{margin-bottom:8px}
+/* Combinators: descendant, child, adjacent sibling, general sibling */
+article p{padding:6px;background:#eef} article>strong{color:green} h2+p{border-left:4px solid teal;padding-left:8px} h2~ul{background:#f6f6f6}
+/* Pseudo-class */
+a:hover{color:red} li:first-child{font-weight:bold} input:focus{outline:2px solid royalblue}
+/* Pseudo-element */
+p::first-letter{font-size:1.5em} .note::after{content:" (added by ::after)";color:purple}
+/* Attribute */
+input[type="text"]{padding:6px;border:1px solid #888} a[target="_blank"]{text-decoration:underline}
+</style></head><body>
+<h1>CSS Selector Demonstration</h1><p id="special">This paragraph uses an ID selector.</p><p class="highlight">This paragraph uses a class selector.</p>
+<article><strong>Direct child strong element.</strong><div><p>Descendant paragraph inside a div.</p></div></article>
+<h2>Adjacent sibling example</h2><p>This paragraph immediately follows h2.</p><ul><li>First item</li><li>Second item</li></ul>
+<p class="note">Pseudo-element example</p>
+<p><a href="https://example.com" target="_blank" rel="noopener">Link with target attribute</a></p>
+<label>Text input: <input type="text" placeholder="Click to focus"></label>
+</body></html>
