@@ -1,4 +1,3 @@
-// Aim: Read two numbers from the terminal and display their sum.
 const readline = require("node:readline");
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 rl.question("Enter the first number: ", firstText => {
